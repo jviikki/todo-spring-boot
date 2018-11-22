@@ -4,25 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
-public class Task {
-
-    private long id;
+public class TaskData {
     private String name;
     private Date createdAt;
 
-    public Task(long id, String name, Date createdAt) {
-        this.id = id;
+    public TaskData(String name, Date createdAt) {
         this.name = name;
         this.createdAt = createdAt;
-    }
-
-    @JsonProperty("ID")
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     @JsonProperty("Name")
