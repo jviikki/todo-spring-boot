@@ -19,4 +19,4 @@ docker-build-simple:
 	docker build --rm -t todo-spring-boot -f Dockerfile.simple --build-arg JAR_FILE=$(JAR_FILE) .
 
 docker-run:
-	docker run -p 8080:8080 -t todo-spring-boot
+	docker run --rm -p 8080:8080 todo-spring-boot
