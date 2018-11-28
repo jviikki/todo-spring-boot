@@ -19,8 +19,10 @@ public class TaskController {
     }
 
     @RequestMapping(value = "/api/tasks", method = RequestMethod.POST)
-    public void createTask(@RequestBody TaskData taskData) {
-        taskService.createTask(new Task(0, taskData.getName(), taskData.getCreatedAt()));
+    public long createTask(@RequestBody TaskData taskData) {
+        Task t = new Task(0, taskData.getName(), taskData.getCreatedAt());
+        taskService.createTask(t);
+        return t.getId();
     }
 
     @ExceptionHandler(TaskService.TaskNotFoundException.class)
