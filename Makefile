@@ -25,7 +25,7 @@ docker-build-simple:
 
 .PHONY: docker-run
 docker-run:
-	docker run --rm -p 8080:8080 $(IMAGE_NAME)
+	docker run --name todo_java --rm -p 8080:8080 $(IMAGE_NAME)
 
 .PHONY: docker-image-info
 docker-image-info:
