@@ -2,7 +2,7 @@
 set -u
 
 startMS=$(date +%s%3N)
-ID=$(docker run --rm -d -p 8080:8080 ${1})
+ID=$(docker run --memory=1G --cpuset-cpus='0' --rm -d -p 8080:8080 ${1})
 runningMS=`date +%s%3N`
 while true
 do
